@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+            #logo {
+            background-color:rgb(51,156,255);
+        }
+        @keyframes img {
+            0% {opacity:0%}
+            100% {opacity:100%}
+        }
+        #logo img {
+            animation-name:img;
+            animation-duration:2s;
+            padding:10px;
+            width:400px;
+            height:100px;
+        }
+        #db_name {
+            font-weight:700;
+            font-family: Verdana;
+        }
+        @keyframes status{
+                0% {background-color:red}
+                100% {background-color:darkred}
+            }
+        #error {
+            display:block;
+            margin-top:20px;
+            color:darkred;
+        }
+        #status {
+                margin-left:10px;
+                animation-name: status;
+                animation-duration: 1s;
+                animation-direction: alternate;
+                animation-timing-function: ease;
+                animation-iteration-count: infinite;
+                height:20px;
+                width:20px;
+                border-radius:20px;
+                border:4px solid darkslategray;
+            }
+
+        </style>
+        <title>General error</title>
+        <div id="logo">
+            <img src="/static/mariadblogo.png">
+        </div>
+        <span id="error">
+            A genereal error happened! The server could not load.
+            Try to:
+            <ul>
+                <li>Select the correct database.</li>
+                <li>Maybe the user credentials may be wrong.</li>
+                <li>Other issues, may be related to the code part, <a href="mailto:">please contact the administrator.</a></li>
+            </ul>
+        </span>
+        Status:<div id="status" title="Not available"></div>
+    </head>
+    <body>
+
+    </body>
+</html>

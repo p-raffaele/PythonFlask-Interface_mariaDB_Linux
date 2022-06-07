@@ -1,0 +1,129 @@
+<html>
+    <!--No flask inheritance needed is a page on its standing.-->
+    <head>
+        <title>SQL - Form</title>
+        <style>
+            body {
+                margin:0;
+                padding:0;
+                background-color:whitesmoke;
+            }
+            @keyframes cascading {
+                0% {height:0%;
+                border-left-width:0px;
+            border-right-width:0px}
+                60% {height:100%;}
+                70% {height:100%;border-left-width: 0px;border-right-width: 0px;}
+                80% {height:100%;border-left-width: 20px;border-right-width: 20px;}
+            }
+            #cascading {
+                animation-name: cascading;
+                animation-timing-function: ease;
+                animation-duration: 4s;
+                animation-fill-mode:forwards;
+                border-left:20px solid lightskyblue;
+                border-right:20px solid lightskyblue;
+                height:100%;
+                position:absolute;
+                background-color:rgb(51, 156, 255);
+                width:400px;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+            }
+            input{
+                text-align:center;
+                width:100%;
+                border:2px solid whitesmoke;
+                padding:5px;
+                font-size:20px;
+                font-weight:700;
+                color:whitesmoke;
+                font-weight:700;
+                background-color:darkblue;
+            }
+            @keyframes btn {
+                0% {background-color:darkblue}
+                100%{background-color:lightskyblue;}
+            }
+            button:hover {
+                animation-name: btn;
+                animation-duration:1s;
+                animation-fill-mode:forwards;
+            }
+            button{
+                background-color:darkblue;
+                color:whitesmoke;
+                width:100%;
+                font-size:20px;
+                font-weight:700;
+                margin-top:5px;
+                border:2px solid whitesmoke;
+                border-radius:5px;                
+            }
+            #list_db {
+                color:whitesmoke;
+                font-family:verdana;
+                padding:10px;
+            }
+            #list_db h4 {
+                background-color:darkblue;
+                border:3px solid whitesmoke;
+                display:block;
+                padding:5px;
+            }
+            #list_db li {
+                font-weight:700;
+            }
+            #user {
+                font-weight: 700;
+                color:whitesmoke;
+            }
+            #which_db_cont {
+                left:50%;
+            }
+            #which_db {
+                font-family:verdana;
+                color:white;
+                background-color:darkblue;
+                font-weight:700;
+                padding:10px;
+                border:3px solid whitesmoke;
+                width:100%;
+            }
+            #use_btn {
+                margin-top:10px;
+                padding:5px;
+                color:white;
+                background-color:darkblue;
+                border:3px solid white;
+                border-radius:5px;
+                font-weight:700;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cascading">
+        <div id="list_db">
+            <h4>Available databases</h4>
+            <p>Data extracted from the user:<span id='user'>{{user_id}}</span></p>
+            <ul>
+                {%for db in db_list%}
+                <li>{{db}}</li>
+                {%endfor%}
+            </ul>
+            <div id ="which_db_cont">
+                <form method="POST">
+                    <input type="text" name="db_name">
+                    <button type="submit" name="submit">Submit</button>
+                </form>
+            </div>
+            <div id="info">
+                <h5>About:</h5>
+                <p>This is a demo and it is a web application developed to offers Linux users
+                    a comfortable,fluid, and user friendly interface to MariaDB software.
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

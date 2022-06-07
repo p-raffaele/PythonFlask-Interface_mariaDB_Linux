@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <title>SQL - Demo</title>
+        <style>
+            @keyframes magnify{
+                0% {
+                    font-size:100px;
+                }
+                100% {
+                    font-size:50px;
+                }
+            }
+
+            body {
+                margin:0px;
+                padding:0px;
+                background-color:whitesmoke;
+            }
+
+            #container {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+            }
+            @keyframes author{
+                0%{opacity:0%;top:75%}
+                50%{opacity:50%;}
+                100%{opacity:100%;top:80%}
+            }
+            #author {
+                animation-name: author;
+                animation-duration: 2s;
+                margin-top:0px;
+                position:absolute;
+                color:darkslategrey;
+                font-weight:700;
+                font-style: oblique;
+                font-family:Cambria;
+                top:80%;
+                left:50%;
+                transform:translate(-50%,-50%)
+            }
+            #btncontainer {
+                margin-top:0px;
+                position:absolute;
+                top:68%;
+                left:50%;
+                transform: translate(-50%,-50%)
+            }
+            @keyframes btn_text {
+                0% {padding:10px;background-color:rgb(51, 156, 255);;color:white;}
+                50% {padding:5px;background-color:white;color:rgb(51, 156, 255);border-color:rgb(51, 156, 255);}
+                100% {padding:10px;background-color:rgb(51, 156, 255);color:white;}
+            }
+
+            #btn_text {
+                font-family:Verdana;
+                border-radius:10px;
+                padding:10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color:white;
+                background-color: rgb(51, 156, 255);;
+                border:5px solid rgb(51, 156, 255);;
+            }
+            #btn_text:hover {
+                animation-name:btn_text;
+                animation-duration:2s;
+            }
+        
+            @keyframes motto{
+                0% {top:68%;opacity:0%;}
+                100%{top:58%;opacity:100%}
+            }
+            #motto {
+                animation-name: motto;
+                animation-duration: 2s;
+                position:absolute;
+                margin-top:0px;
+                left:50%;
+                top:58%;
+                transform:translate(-50%,-50%);
+                text-align:center;
+                color:darkslategrey;
+                font-style: oblique;
+                font-size:25px;
+            }
+
+            #t1 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+            }
+            #t2 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+                animation-delay:0.2s;
+                animation-timing-function: ease;
+            }
+            #t3 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+                animation-delay:0.4s;
+                animation-timing-function: ease;
+
+            }
+            #t4 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+                animation-delay:0.6s;
+                animation-timing-function: ease;
+            }
+            #t5 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+                animation-delay:0.8s;
+                animation-timing-function: ease;
+            }
+            #t6 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+                animation-delay:1s;
+                animation-timing-function: ease;
+            }
+            #t7 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+                animation-delay:1.2s;
+                animation-timing-function: ease;
+            }
+            #t8 {
+                color:rgb(51, 156, 255);
+                font-size:50px;
+                text-transform: uppercase;
+                font-weight:700;
+                animation-name:magnify;
+                animation-duration: 2s;
+                animation-delay:1.4s;
+                animation-timing-function: ease;
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+                <span id="t1">D</span>
+                <span id="t2">A</span>
+                <span id="t3">T</span>
+                <span id="t4">A</span>
+                <span id="t5">B</span>
+                <span id="t6">A</span>
+                <span id="t7">S</span>
+                <span id="t8">E</span>
+        </div>
+        <span id="motto">Your safety stored in a click</span>
+        <div id="btncontainer">
+            <a href="{{url_for('sql_page')}}"><button type="button" id ="btn_text">Try it!</button></a>
+        </div>
+        <span id="author">Palumbo Raffaele</span>
+
+    </body>
+</html>
